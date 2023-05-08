@@ -2,4 +2,11 @@
 
 // Welcome back old friend!
 
-Console.WriteLine("\"Programming is like building a multilingual puzzle");
+
+public class SchoolTasks
+{
+    public static void Main()
+    {
+        Console.WriteLine("\"Programming is like building a multilingual puzzle");
+    }
+}
