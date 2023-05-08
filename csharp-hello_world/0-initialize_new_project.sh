@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-dotnet new console --framework net7.0
+dotnet new console -o "./0-new_project"
