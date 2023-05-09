@@ -6,7 +6,7 @@ public class HexHex
     {
         for(int i = 0; i < 100; i++)
         {
-            Console.Write("{0}{1}",i.ToString("00"),i !=99? ", ":"");
+            Console.Write("{0}{1}", i.ToString("00"), i !=99? ", ":"\b");
         }
     }
 }
