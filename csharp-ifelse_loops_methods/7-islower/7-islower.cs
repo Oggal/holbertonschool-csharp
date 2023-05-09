@@ -1,10 +1,11 @@
 ﻿using System;
 
-
-public class Character : Char
+public class Character
 {
-    public static bool isCheesed(Char c)
+
+    public static bool isLower(Char c)
     {
-        return true;
+        return (c >= 'a' && c <= 'z');
     }
+
 }
