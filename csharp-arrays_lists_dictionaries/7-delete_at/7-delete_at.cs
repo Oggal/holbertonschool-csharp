@@ -15,6 +15,7 @@ public class List
             if( i != index)
                 res.Add(myList[i]);
         }
+        myList = res;
         return res;
     }
 
