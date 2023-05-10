@@ -16,6 +16,7 @@ public class List
                 continue;
             res.Add(myList[i]);
         }
+        return res;
     }
 
 }
