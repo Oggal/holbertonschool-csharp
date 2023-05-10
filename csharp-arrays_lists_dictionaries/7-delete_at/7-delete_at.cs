@@ -12,9 +12,8 @@ public class List
         List<int> res = new List<int>();
         for(int i = 0; i < myList.Count; i++)
         {
-            if( i == index)
-                continue;
-            res.Add(myList[i]);
+            if( i != index)
+                res.Add(myList[i]);
         }
         return res;
     }
