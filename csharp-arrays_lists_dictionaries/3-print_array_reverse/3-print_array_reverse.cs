@@ -27,7 +27,8 @@ public class Array
 
     public static void Reverse(int[] array)
     {
-        for(int i = array.Length - 1; i != -1; i--)
+        int x = array?.Length;
+        for(int i = x - 1; i != -1; i--)
         {
             Console.Write("{0}{1}", array[i], i == 0 ? "" : " ");
         }
