@@ -29,7 +29,8 @@ public class Array
     {
         for(int i = array.Length - 1; i != -1; i--)
         {
-            Console.Write("{0}{1}", array[i], i == 0 ? "\n" : " ");
+            Console.Write("{0}{1}", array[i], i == 0 ? "" : " ");
         }
+        Console.WriteLine();
     }
 }
