@@ -9,13 +9,8 @@ public class List
         HashSet<int> res = new HashSet<int>();
         foreach(int i in list1)
         {
-            foreach(int j in list2)
-            {
-                if (i == j){
+            if(list2.Contains(i))
                     res.Add(i);
-                    break;
-                }
-            }
         }
         return new List<int>(res);
     }
