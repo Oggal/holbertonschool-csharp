@@ -13,6 +13,6 @@ public class List
             else
                 res.Remove(i);
         }
-        return res;
+        return res.Sort();
     }
 }
