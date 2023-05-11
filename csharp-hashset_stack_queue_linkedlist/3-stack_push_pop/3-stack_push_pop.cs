@@ -17,7 +17,7 @@ public class MyStack
         //Thing 3: Print if Item exisits
         bool found = aStack.Contains(search);
         Console.WriteLine("Stack contains \"{0}\": {1}", search, found);
-        //Thing 4: Pop Till Item
+        //Thing 4: P0P Till Item
         if (found)
         {
             while (aStack.Pop() != search)
