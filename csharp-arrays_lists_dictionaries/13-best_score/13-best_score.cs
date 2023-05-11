@@ -14,6 +14,8 @@ public class Dictionary
                 max = myList[key];
                 res = key;
             }
+        if(max == null)
+            return "None";
         return res;
     }
 }
