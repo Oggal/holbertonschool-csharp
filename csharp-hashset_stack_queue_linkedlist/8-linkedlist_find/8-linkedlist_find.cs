@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 public class LList
 {
     public static int FindNode(LinkedList<int> myLList, int value)
