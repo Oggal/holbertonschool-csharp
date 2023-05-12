@@ -6,7 +6,7 @@ public class LList
 {
     public static LinkedListNode<int> Insert(LinkedList<int> myLList, int n)
     {
-        LinkedListNode<int> last, node = myLList.First;
+        LinkedListNode<int> last = null, node = myLList.First;
         
         while(node != null)
         {
