@@ -9,7 +9,7 @@ public class LList
         LinkedListNode<int> last = null;
         foreach(LinkedListNode<int> node in myLList)
         {
-            if(!last)
+            if(last != null)
             {
                 if(n>last.Value)
                     return myLList.AddBefore(last,n);
