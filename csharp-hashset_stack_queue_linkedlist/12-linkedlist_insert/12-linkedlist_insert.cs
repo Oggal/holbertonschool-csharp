@@ -14,7 +14,7 @@ public class LList
                 if(n>last.Value)
                     return myLList.AddBefore(last,n);
             }else{
-                if( n < node)
+                if( n < node.Value)
                     return myLList.AddBefore(node, n);
             }
         }
