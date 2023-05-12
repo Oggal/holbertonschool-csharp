@@ -15,6 +15,6 @@ public class LList
             last = node;
             node = node.Next;
         }
-        myLList.AddLast(n);
+        return myLList.AddLast(n);
     }
 }
