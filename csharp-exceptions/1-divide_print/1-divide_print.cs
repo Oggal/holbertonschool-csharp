@@ -9,10 +9,8 @@ public class Int
         {
             res = a / b;
         }
-        catch(Exception e)
-        {
-            e = null;
-        }
+        catch(Exception)
+        {}
         finally
         {
             Console.WriteLine("{0} / {1} = {2}", a, b, res);
