@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class List
 {
@@ -12,7 +13,7 @@ public class List
                 Console.WriteLine(myList[i]);
             }
         }
-        catch(Exception)
+        catch(Exception e)
         {
             ;
         }
