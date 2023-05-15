@@ -13,7 +13,7 @@ public class List
                 res.Add(div(list1[i], list2[i]));
             }
         }
-        catch(IndexOutOfRangeException)
+        catch(ArgumentOutOfRangeException)
         {
             Console.WriteLine("Out of range");
         }
