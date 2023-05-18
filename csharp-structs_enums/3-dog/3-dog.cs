@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-public enum Rating 
+public enum Rating
 {
     Good,
     Great,
@@ -15,7 +15,7 @@ public struct Dog
     public string owner;
     public Rating rating;
 
-    public Dog( string name, float age, string owner, Rating rate )
+    public Dog(string name, float age, string owner, Rating rate)
     {
         this.name = name;
         this.age = age;
@@ -25,6 +25,6 @@ public struct Dog
 
     public override string ToString()
     {
-        return (String.Format("Dog Name: {0}\nAge: {1}\nOwner: {2}\nRating: {3}",this.name, this.age, this.owner, this.rating));
+        return (String.Format("Dog Name: {0}\nAge: {1}\nOwner: {2}\nRating: {3}", this.name, this.age, this.owner, this.rating));
     }
 }

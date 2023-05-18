@@ -4,7 +4,7 @@ public class Array
 {
     public static int elementAt(int[] array, int index)
     {
-        if(index < 0 || index >= array.Length)
+        if (index < 0 || index >= array.Length)
         {
             Console.WriteLine("Index out of range");
             return -1;
@@ -18,7 +18,7 @@ public class Array
         {
             array[index] = n;
         }
-        catch(IndexOutOfRangeException)
+        catch (IndexOutOfRangeException)
         {
             Console.WriteLine("Index out of range");
         }
@@ -28,7 +28,7 @@ public class Array
     public static void Reverse(int[] array)
     {
         int x = (array?.Length).GetValueOrDefault(0);
-        for(int i = x - 1; i != -1; i--)
+        for (int i = x - 1; i != -1; i--)
         {
             Console.Write("{0}{1}", array[i], i == 0 ? "" : " ");
         }

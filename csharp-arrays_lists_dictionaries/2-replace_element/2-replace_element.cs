@@ -4,7 +4,7 @@ public class Array
 {
     public static int elementAt(int[] array, int index)
     {
-        if(index < 0 || index >= array.Length)
+        if (index < 0 || index >= array.Length)
         {
             Console.WriteLine("Index out of range");
             return -1;
@@ -18,7 +18,7 @@ public class Array
         {
             array[index] = n;
         }
-        catch(IndexOutOfRangeException)
+        catch (IndexOutOfRangeException)
         {
             Console.WriteLine("Index out of range");
         }

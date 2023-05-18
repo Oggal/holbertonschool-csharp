@@ -8,11 +8,11 @@ public class LList
     {
         LinkedList<int> res = new LinkedList<int>();
 
-        for(int i = 0; i < size; i++)
-            {
-                res.AddLast(i);
-                Console.WriteLine(i);
-            }
+        for (int i = 0; i < size; i++)
+        {
+            res.AddLast(i);
+            Console.WriteLine(i);
+        }
 
         return res;
     }

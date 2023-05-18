@@ -8,13 +8,13 @@ public class Dictionary
     {
         int? max = null;
         string res = "";
-        foreach(string key in myList.Keys)
-            if(!(max >= myList[key]))
+        foreach (string key in myList.Keys)
+            if (!(max >= myList[key]))
             {
                 max = myList[key];
                 res = key;
             }
-        if(max == null)
+        if (max == null)
             return "None";
         return res;
     }
