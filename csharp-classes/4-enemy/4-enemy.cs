@@ -12,12 +12,14 @@ namespace Enemies
     ///</summary>
     public class Zombie
     {
-        /**
-    <summary>
-        int health
-    </summary>
-    */
         private int health;
+        private string name = null;
+        ///<summary> Name Property </summary>
+        public string Name
+        {
+            get { return name == null ? "(No Name)" : name; }
+            set { name = value; }
+        }
 
         /**
         <summary>
@@ -33,13 +35,11 @@ namespace Enemies
         <summary>
             specific Constructor
         </summary>
-        <param name="value"> a terribly named varriable, should be more descriptive</param>
+        <param name="value"git > a terribly named varriable, should be more descriptive</param>
         */
         public Zombie(int value)
         {
-            if (value < 0)
-                throw new ArgumentException("Health must be greater than or equal to 0");
-            health = value;
+            SetHealth(value);
         }
 
         /**
@@ -51,6 +51,13 @@ namespace Enemies
         public int GetHealth()
         {
             return this.health;
+        }
+
+        private void SetHealth(int _health)
+        {
+            if (_health < 0)
+                throw new ArgumentException("Health must be greater than or equal to 0");
+            health = _health;
         }
     }
 }

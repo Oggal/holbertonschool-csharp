@@ -19,14 +19,14 @@ namespace Enemies
     */
         public int health;
 
-                /**
-        <summary>
-            Default Constructor
-        </summary>
-        */
+        /**
+<summary>
+    Default Constructor
+</summary>
+*/
         public Zombie()
         {
-            
+
         }
 
         /**
@@ -37,7 +37,7 @@ namespace Enemies
         */
         public Zombie(int value)
         {
-            if(value < 0)
+            if (value < 0)
                 throw new ArgumentException("Health must be greater than or equal to 0");
             health = value;
         }
