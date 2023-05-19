@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Enemys
+namespace Enemies
 {
     ///<summary>
     /// Required documentation creates unneeded noise when reading code.
