@@ -8,14 +8,15 @@ namespace Enemies
     /// See the book "Clean Code", page 63, Mandated Comments.
     ///
     /// Furthermore, documenting an empty class is just noise.
+    /// did We mention that failing to update comments makes them worse?
     ///</summary>
     public class Zombie
     {
-            /**
-        <summary>
-            int health
-        </summary>
-        */
+        /**
+    <summary>
+        int health
+    </summary>
+    */
         public int health;
 
         /**
