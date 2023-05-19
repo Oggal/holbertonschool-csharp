@@ -33,7 +33,7 @@ namespace Enemies
         <summary>
             specific Constructor
         </summary>
-        <param name=value> a terribly named varriable, should be more descriptive</param>
+        <param name="value"> a terribly named varriable, should be more descriptive</param>
         */
         public Zombie(int value)
         {
