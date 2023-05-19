@@ -60,6 +60,8 @@ namespace Enemies
             health = _health;
         }
 
+        ///<summary> Make this a string </summary>
+        ///<returns> useful string of the zombie </returns>
         public override string ToString()
         {
             return string.Format("Zombie Name: {0} / Total Health: {1}", this.Name, this.health);
