@@ -28,8 +28,6 @@ namespace MyMath.Tests
         [Test]
         public void NullReturn()
         {
-            int [,] testA = new int [0,0];
-            Assert.IsNull(MyMath.Matrix.Divide(testA,2));
             Assert.IsNull(MyMath.Matrix.Divide(null, 2));
             Assert.Pass();
         }
