@@ -29,8 +29,14 @@ namespace MyMath.Tests
         {
             int [,] testA = new int [0,0];
             Assert.IsNull(MyMath.Matrix.Divide(testA,2));
-            Assert.IsNull(MyMath.Matrix.Divide(testmatrix, 0));
             Assert.IsNull(MyMath.Matrix.Divide(null, 2));
+        }
+
+        [Test]
+        public void DivideByZero()
+        {
+            Assert.IsNull(MyMath.Matrix.Divide(testmatrix, 0));
+
         }
 
         
