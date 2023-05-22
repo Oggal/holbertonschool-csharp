@@ -2,8 +2,10 @@
 
 namespace Text
 {
+    /// <summary> Str class</summary>
     public static class Str
     {
+        /// <summary> CamelCase method</summary>
         public static int CamelCase(string s)
         {
             if( s == null || s.Length == 0)
