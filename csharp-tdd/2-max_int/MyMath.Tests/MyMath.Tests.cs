@@ -6,7 +6,8 @@ namespace MyMath.Tests
     public class Tests
     {
         int[,] testmatrix;
-        int[] posFive = { 1, 2, 3, 4, 5 }, negFive = { -1, -2, -3, -4, -5 };
+        int[] posFive = { 1, 2, 3, 4, 5 }, negFive = { -1, -2, -3, -4, -5 },
+        centerPos = {1,2,5,3,4}, centerNeg = {-1,-2,-5,-3,-4};
         List<int> testList;
         [SetUp]
         public void Setup()
@@ -63,6 +64,18 @@ namespace MyMath.Tests
         {
             testList.Clear();
             testList.AddRange(negFive);
+            Assert.AreEqual(-1, MyMath.Operations.Max(testList));
+            testList.Clear();
+        }
+
+        [Test]
+        public void CenterTest()
+        {
+            testList.Clear();
+            testList.AddRange(centerPos);
+            Assert.AreEqual(5, MyMath.Operations.Max(testList));
+            testList.Clear();
+            testList.AddRange(centerNeg);
             Assert.AreEqual(-1, MyMath.Operations.Max(testList));
             testList.Clear();
         }

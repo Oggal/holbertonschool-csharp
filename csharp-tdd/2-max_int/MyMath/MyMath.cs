@@ -25,9 +25,11 @@ namespace MyMath
         }
     }
 
+    ///<summary> task0 </summary>
     public static class Operations
     {
 
+        ///<summary> max int from List </summary>
         public static int Max(List<int> nums)
         {
             int? res = null;
