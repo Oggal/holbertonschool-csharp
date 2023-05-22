@@ -24,6 +24,7 @@ namespace MyMath.Tests
             Assert.AreEqual(2/value ,res[0,0]);
         }
 
+        [Test]
         public void NullReturn(int value)
         {
             int [,] testA = new int [0,0];
