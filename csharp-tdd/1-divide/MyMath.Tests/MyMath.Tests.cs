@@ -22,6 +22,7 @@ namespace MyMath.Tests
         {
             int[,] res = MyMath.Matrix.Divide(testmatrix, value);
             Assert.AreEqual(2/value ,res[0,0]);
+            Assert.Pass();
         }
 
         [Test]
@@ -37,6 +38,7 @@ namespace MyMath.Tests
         public void DivideByZero()
         {
             Assert.IsNull(MyMath.Matrix.Divide(testmatrix, 0));
+            Assert.Pass();
 
         }
 
