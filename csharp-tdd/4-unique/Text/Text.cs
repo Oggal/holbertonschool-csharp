@@ -2,8 +2,10 @@
 
 namespace Text
 {
+    /// <summary>Class Str</summary>
     public static class Str
     {
+        /// <summary>Method UniqueChar</summary>
         public static int UniqueChar(string s)
         {
             if( s == null || s.Length == 0)
