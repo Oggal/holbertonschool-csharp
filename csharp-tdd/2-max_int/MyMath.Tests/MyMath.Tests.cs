@@ -7,7 +7,7 @@ namespace MyMath.Tests
     {
         int[,] testmatrix;
         int[] posFive = { 1, 2, 3, 4, 5 }, negFive = { -1, -2, -3, -4, -5 },
-        centerPos = {1,2,5,3,4}, centerNeg = {-1,-2,-5,-3,-4};
+        centerPos = {1,2,5,3,4}, centerNeg = {-1,-2,50,-3,-4};
         List<int> testList;
         [SetUp]
         public void Setup()
@@ -76,7 +76,12 @@ namespace MyMath.Tests
             Assert.AreEqual(5, MyMath.Operations.Max(testList));
             testList.Clear();
             testList.AddRange(centerNeg);
-            Assert.AreEqual(-1, MyMath.Operations.Max(testList));
+            Assert.AreEqual(50, MyMath.Operations.Max(testList));
+            testList.Clear();
+            testList.Add(0);
+            testList.Add(5);
+            testList.Add(3);
+            Assert.AreEqual(5, MyMath.Operations.Max(testList));
             testList.Clear();
         }
         
