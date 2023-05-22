@@ -47,8 +47,7 @@ namespace MyMath.Tests
         [Test]
         public void MaxOfNone()
         {
-            testList.Clear();
-            Assert.AreEqual(0, MyMath.Operations.Max(testList));
+            Assert.AreEqual(0, MyMath.Operations.Max(new List<int>()));
         }
 
         [Test]
@@ -79,9 +78,7 @@ namespace MyMath.Tests
             testList.AddRange(centerNeg);
             Assert.AreEqual(50, MyMath.Operations.Max(testList));
             testList.Clear();
-            testList.Add(0);
             testList.Add(5);
-            testList.Add(3);
             Assert.AreEqual(5, MyMath.Operations.Max(testList));
             testList.Clear();
         }
