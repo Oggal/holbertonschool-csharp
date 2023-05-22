@@ -82,6 +82,21 @@ namespace MyMath.Tests
             Assert.AreEqual(5, MyMath.Operations.Max(testList));
             testList.Clear();
         }
+
+        [Test]
+        public void NullList()
+        {
+            Assert.AreEqual(0, MyMath.Operations.Max(null));
+        }
+
+        [Test]
+        public void MaxOfOne()
+        {
+            testList.Clear();
+            testList.Add(1);
+            Assert.AreEqual(1, MyMath.Operations.Max(testList));
+            testList.Clear();
+        }
         
     }
 }

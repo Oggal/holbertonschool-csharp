@@ -33,10 +33,13 @@ namespace MyMath
         public static int Max(List<int> nums)
         {
             int? res = null;
-            foreach(int i in nums)
+            if (nums != null)
             {
-                if (!(res >= i))
-                    res = i;
+                foreach(int i in nums)
+                {
+                    if (!(res >= i))
+                        res = i;
+                }
             }
             return res.GetValueOrDefault();
         }
