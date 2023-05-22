@@ -47,6 +47,7 @@ namespace MyMath.Tests
         [Test]
         public void MaxOfNone()
         {
+            testList.Clear();
             Assert.AreEqual(0, MyMath.Operations.Max(testList));
         }
 
