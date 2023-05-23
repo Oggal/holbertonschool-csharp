@@ -12,8 +12,8 @@ namespace MyMath.Tests
         [Test]
         public void SimpleAddition()
         {
-            int res = MyMath.Operations.Add(1,1);
-            Assert.AreEqual(2,res);
+            int res = MyMath.Operations.Add(1, 1);
+            Assert.AreEqual(2, res);
             Assert.Pass();
         }
     }

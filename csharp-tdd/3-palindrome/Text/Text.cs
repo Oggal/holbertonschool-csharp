@@ -10,13 +10,13 @@ namespace Text
         ///<return>True if palindrome, False if not</return>
         public static bool IsPalindrome(string s)
         {
-            if(s == null || s == "")
+            if (s == null || s == "")
                 return true;
-            s= s.ToLower();
+            s = s.ToLower();
             s = s.Replace(" ", "").Replace(".", "").Replace(":", "").Replace(",", "").Replace("?", "").Replace("!", "");
-            for(int i = 0; i < s.Length - (i+1); i++)
+            for (int i = 0; i < s.Length - (i + 1); i++)
             {
-                if(s[i] != s[s.Length - (i+1)])
+                if (s[i] != s[s.Length - (i + 1)])
                     return false;
             }
             return true;

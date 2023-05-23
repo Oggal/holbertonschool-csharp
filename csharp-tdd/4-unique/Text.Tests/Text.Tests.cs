@@ -19,7 +19,7 @@ namespace Text.Tests
         [TestCase(TestString4, ExpectedResult = -1)]
         [TestCase("", ExpectedResult = -1)]
         [TestCase(null, ExpectedResult = -1)]
-        public int failCases(string value) 
+        public int failCases(string value)
         {
             return (Str.UniqueChar(value));
         }

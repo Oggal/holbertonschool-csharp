@@ -6,7 +6,8 @@ namespace MyMath
     public static class Matrix
     {
         ///<summary> I find it hard to care most days... Should probably get therapy </summary>
-        public static int [,] Divide(int [,] matrix, int num){
+        public static int[,] Divide(int[,] matrix, int num)
+        {
             if (num == 0)
             {
                 System.Console.WriteLine("Num cannot be 0");
@@ -14,14 +15,14 @@ namespace MyMath
             }
             if (matrix == null)
                 return null;
-            
-            int[,] res = new int[matrix.GetLength(0),matrix.GetLength(1)];
+
+            int[,] res = new int[matrix.GetLength(0), matrix.GetLength(1)];
             for (int i = 0; i < matrix.GetLength(0); i++)
                 for (int j = 0; j < matrix.GetLength(1); j++)
-                    res[i,j] = matrix[i,j]/num;
+                    res[i, j] = matrix[i, j] / num;
 
             return res;
-            
+
         }
     }
 
@@ -35,7 +36,7 @@ namespace MyMath
             int? res = null;
             if (nums != null)
             {
-                foreach(int i in nums)
+                foreach (int i in nums)
                 {
                     if (!(res >= i))
                         res = i;
