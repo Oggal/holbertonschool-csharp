@@ -41,9 +41,5 @@ public class Rectangle : Shape
                 height = value;
         }
     }
-    /// <summary>Method Area() that overrides the Area() method defined in the Shape base class</summary>
-    public override int Area()
-    {
-        return height * width;
-    }
+
 }
