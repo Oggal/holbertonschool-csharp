@@ -49,7 +49,7 @@ public class Rectangle : Shape
     /// <summary>Method ToString() that overrides ToString()</summary>
     public override string ToString()
     {
-        return $"[Rectangle] {width} / {height}";
+        return $"[{this.GetType().Name}] {width} / {height}";
     }
 }
 
