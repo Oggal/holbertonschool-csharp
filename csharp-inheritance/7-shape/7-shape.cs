@@ -41,12 +41,12 @@ public class Rectangle : Shape
                 height = value;
         }
     }
-    /// <summary>Method Area() that overrides the Area() method defined in the Shape base class</summary>
+    /// <summary>Method Area()</summary>
     public new int Area()
     {
         return height * width;
     }
-
+    /// <summary>Method ToString() that overrides ToString()</summary>
     public override string ToString()
     {
         return $"[Rectangle] {width} / {height}";
