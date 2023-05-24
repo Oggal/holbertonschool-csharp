@@ -7,6 +7,6 @@ public class Shape
     /// <returns>The area of the shape</returns>
     public virtual int Area()
     {
-        throw new NotImplementedException();
+        throw new NotImplementedException("Area() is not implemented");
     }
 }
