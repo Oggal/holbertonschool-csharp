@@ -3,6 +3,7 @@ using System;
 /// <summary> Matrix Math class</summary>
 public static class MatrixMath
 {
+    /// <summary> Matrix Addition Method</summary>
     public static double[,] Add(double[,] matrix1, double[,] matrix2)
     {
         if (matrix1.GetLength(0) != matrix2.GetLength(0) || matrix1.GetLength(1) != matrix2.GetLength(1) || matrix1.GetLength(0) < 2 || matrix1.GetLength(0) > 3 || matrix1.GetLength(1) < 2 || matrix1.GetLength(1) > 3)
