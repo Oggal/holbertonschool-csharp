@@ -87,7 +87,7 @@ public static class MatrixMath
         if (!(direction == 'x' || direction == 'y'))
             return new double[,] {{-1}};
         double[,] shear;
-        if (direction == 'x')
+        if (direction == 'y')
             shear = new double[,] {{1, factor}, {0, 1}};
         else
             shear = new double[,] {{1, 0}, {factor, 1}};
