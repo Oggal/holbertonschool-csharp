@@ -116,17 +116,15 @@ public class Queue<T>
         }
         Node node = head;
         string result = "";
-        result += node.value;
         while (node != null)
         {
-            if (typeof(T) == typeof(string))
-                result += " ";
             result += node.value;
+            if (typeof(T) == typeof(string) && node.next != null)
+                result += " ";
             node = node.next;
         }
         return result;
     }
-
 }
 
 
