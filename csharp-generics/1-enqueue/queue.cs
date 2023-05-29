@@ -6,18 +6,20 @@ public class Queue<T>
 
     class Node
     {
-        T value = null;
-        T next = null;
+        public T value;
+        public Node next;
 
         public Node(T value)
         {
             this.value = value;
+            this.next = null;
         }
     }
 
     Node head;
     Node tail;
-    public int count;
+    
+    int count;
 
     /// <summary> Returns the Queue's type </summary>
     public Type CheckType()
@@ -25,6 +27,7 @@ public class Queue<T>
         return typeof(T);
     }
 
+    /// <summary> Enqueue Method </summary>
     public T Enqueue(T value)
     {
         Node node = new Node(value);
@@ -42,6 +45,7 @@ public class Queue<T>
         return node.value;
     }
 
+    ///<summary> Counts Nodes in Queue </summary>
     public int Count()
     {
         int i = 0;
