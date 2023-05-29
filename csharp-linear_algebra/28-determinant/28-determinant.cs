@@ -130,7 +130,7 @@ public static class MatrixMath
             }
             result -= temp.GetValueOrDefault(0);       
         }
-        return result;
+        return  Math.Round(result, 2);
     }
 
 }
