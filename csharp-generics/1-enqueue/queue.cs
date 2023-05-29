@@ -15,8 +15,8 @@ public class Queue<T>
         }
     }
 
-    public Node head;
-    public Node tail;
+    Node head;
+    Node tail;
     public int count;
 
     /// <summary> Returns the Queue's type </summary>
