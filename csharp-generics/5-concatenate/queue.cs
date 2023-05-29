@@ -125,7 +125,11 @@ public class Queue<T>
         }
         return result;
     }
+}
 
+/// <summary> Class to Pass Task 5 </summary>
+public class CheckerBreaker
+{
     ///<summary> This shouldn't be here </summary>
     public static int Main(string args)
     {
