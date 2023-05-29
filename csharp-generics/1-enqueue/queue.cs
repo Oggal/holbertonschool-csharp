@@ -40,7 +40,20 @@ public class Queue<T>
         }
         count++;
         return node.value;
-    }    
+    }
+
+    public int Count()
+    {
+        int i = 0;
+        Node node = head;
+        while (node != null)
+        {
+            i++;
+            node = node.next;
+        }
+        count = i;
+        return count;
+    }
 
 }
 
