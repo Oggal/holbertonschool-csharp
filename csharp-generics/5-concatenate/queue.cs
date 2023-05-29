@@ -114,9 +114,9 @@ public class Queue<T>
             Console.WriteLine("Concatenate() is for a queue of Strings or Chars only.");
             return null;
         }
+        Node node = head;
         string result = "";
         result += node.value;
-        Node node = head;
         while (node != null)
         {
             if (typeof(T) == typeof(string))
