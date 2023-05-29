@@ -5,7 +5,7 @@ public class Queue<T>
 {
 
     /// <summary> Returns the Queue's type </summary>
-    public type CheckType()
+    public Type CheckType()
     {
         return typeof(T);
     }
