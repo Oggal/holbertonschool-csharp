@@ -133,7 +133,7 @@ public static class MatrixMath
         return  Math.Round(result, 2);
     }
 
-    ///<summary> Inverse Matrix Method</summary>
+    ///<summary> Inverse 2D Matrix Method</summary>
     public static double[,] Inverse2D(double[,] matrix)
     {
         if (!ValidateMatrix2D(matrix))
@@ -146,6 +146,39 @@ public static class MatrixMath
             {-1 * matrix[1, 0], matrix[0, 0]}};
         result = MultiplyScalar(result, 1 / det);
         return result;
+    }
+
+    ///<summary> Inverse 3D Matrix Method</summary>
+    public static double[,] Inverse3D(double[,] matrix)
+    {
+        double det = Determinant(matrix);
+        if (det == 0)
+            return new double[,] {{-1}};
+        double[,] result = new double[3,3];
+        double a, b, c, d, e, f, g, h, i;
+        a = matrix[0, 0];
+        b = matrix[0, 1];
+        c = matrix[0, 2];
+        d = matrix[1, 0];
+        e = matrix[1, 1];
+        f = matrix[1, 2];
+        g = matrix[2, 0];
+        h = matrix[2, 1];
+        i = matrix[2, 2];
+        result[0, 0] = e * i - f * h;
+        result[0, 1] = -1 * (d * i - f * g);
+        result[0, 2] = d * h - e * g;
+        result[1, 0] = -1 * (b * i - c * h);
+        result[1, 1] = a * i - c * g;
+        result[1, 2] = -1 * (a * h - b * g);
+        result[2, 0] = b * f - c * e;
+        result[2, 1] = -1 * (a * f - c * d);
+        result[2, 2] = a * e - b * d;
+        result = Transpose(result);
+        result = MultiplyScalar(result, 1 / det);
+        return result;
+
+
     }
 
 }
