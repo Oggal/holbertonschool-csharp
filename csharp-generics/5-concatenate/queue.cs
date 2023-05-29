@@ -131,7 +131,7 @@ public class Queue<T>
 public class CheckerBreaker
 {
     ///<summary> This shouldn't be here </summary>
-    public static int Main(string args)
+    public static int Main(string[] args)
     {
         return 1;
     }
