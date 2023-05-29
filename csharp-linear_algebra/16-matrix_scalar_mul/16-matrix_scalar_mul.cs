@@ -32,4 +32,13 @@ public static class MatrixMath
                  result[i, j] = matrix[i, j] * scalar;
         return result;
     }
+
+    ///<summary> Valiadates a Matrix to be 2D or 3D</summary>
+    public static bool ValidateMatrix(double[,] matrix)
+    {
+        if (matrix.GetLength(0) < 2 || matrix.GetLength(0) > 3 ||
+        matrix.GetLength(1) < 2 || matrix.GetLength(1) > 3)
+            return false;
+        return true;
+    }
 }
