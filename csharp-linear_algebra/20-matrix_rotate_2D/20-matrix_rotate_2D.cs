@@ -64,6 +64,7 @@ public static class MatrixMath
     ///<summary> Rotate Matrix Method</summary>
     public static double[,] Rotate2D(double[,] matrix, double angle)
     {
+        angle *= -1;
         if (! ValidateMatrix2D(matrix))
             return new double[,] {{-1}};
         double[,] result = new double[2, 2], rotation = new double[2,2] ;
@@ -71,7 +72,10 @@ public static class MatrixMath
         rotation[0, 1] = -1 * Math.Sin(angle);
         rotation[1, 0] = Math.Sin(angle);
         rotation[1, 1] = Math.Cos(angle);
-        result = Multiply(rotation, matrix);
+        result = Multiply(matrix, rotation);
+        for(int i = 0; i < result.GetLength(0); i++)
+            for(int j = 0; j < result.GetLength(1); j++)
+                result[i, j] = Math.Round(result[i, j], 2);
         return result;
     }
 }
