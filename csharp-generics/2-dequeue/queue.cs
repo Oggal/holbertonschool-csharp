@@ -44,7 +44,8 @@ public class Queue<T>
         count++;
         return node.value;
     }
-
+    
+    /// <summary> Dequeue Method </summary>
     public T Dequeue()
     {
         if (head == null)
