@@ -111,7 +111,7 @@ public static class MatrixMath
         if (!ValidateMatrix(matrix))
             return -1;
         if (ValidateMatrix2D(matrix))
-            return matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+            return  Math.Round(matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0], 2);
         double result = 0;
         double? temp = null;
         for(int i = 0; i < matrix.GetLength(0); i++)
