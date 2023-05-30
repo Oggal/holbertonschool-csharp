@@ -127,14 +127,3 @@ public class Queue<T>
     }
 }
 
-/// <summary> Class to Pass Task 5 </summary>
-public class CheckerBreaker
-{
-    ///<summary> This shouldn't be here </summary>
-    public static int Main(string[] args)
-    {
-        return 1;
-    }
-}
-
-
