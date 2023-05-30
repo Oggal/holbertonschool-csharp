@@ -16,7 +16,13 @@ public class RoomObjects
     {
         foreach(Base obj in roomObjects)
         {
-            // Do things... 
+            if (type.IsInstanceOfType(obj))
+                if (type == typeof(IInteractive))
+                    ((IInteractive)obj).Interact();
+                else if (type == typeof(IBreakable))
+                    ((IBreakable)obj).Break();
+                else if (type == typeof(ICollectable))
+                    ((ICollectable)obj).Collect();
         }
 
     }
