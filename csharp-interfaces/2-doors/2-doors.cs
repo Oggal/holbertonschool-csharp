@@ -12,6 +12,6 @@ public class Door : Base, IInteractive
     ///<summary> Interact Method </summary>
     public void Interact()
     {
-        Console.WriteLine("You try to open the {}. It's locked.", this.name);
+        Console.WriteLine("You try to open the {0}. It's locked.", this.name);
     }
 }
