@@ -9,6 +9,6 @@ public abstract class Base
     ///<summary> ToString override method</summary>
     public override string ToString()
     {
-        return string.format("{0} is a {1}", name, this.GetType().ToString());
+        return string.Format("{0} is a {1}", name, this.GetType().ToString());
     }
 }
