@@ -1,4 +1,4 @@
-
+using System;
 
 ///<summary> Door Class </summary>
 public class Door : Base, IInteractive
