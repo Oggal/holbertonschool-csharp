@@ -117,7 +117,7 @@ public delegate float CalculateModifier(float baseValue, Modifier modifier);
 public class CurrentHPArgs : EventArgs
 {
     /// <summary> currentHp property </summary>
-    public float currentHp { get; private set; }
+    public float currentHp { get; }
 
     /// <summary> CurrentHPArgs Constructor </summary>
     public CurrentHPArgs(float newHp)
