@@ -38,8 +38,7 @@ public class Player
         if( damage < 0f)
             damage = 0f;
             Console.WriteLine("{0} takes {1} damage!", name, damage);
-            hp -= damage;
-            hp = math.clamp(hp, 0f, maxHp);
+
     }
 
     /// <summary> HealDamage Method </summary>
@@ -48,8 +47,7 @@ public class Player
         if( heal < 0f)
             heal = 0f;
         Console.WriteLine("{0} heals {1} HP!", name, heal);
-        hp += heal;
-        hp = math.clamp(hp, 0f, maxHp);
+
     }
 
 }
