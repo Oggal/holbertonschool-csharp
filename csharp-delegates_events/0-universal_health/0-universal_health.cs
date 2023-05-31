@@ -1,5 +1,7 @@
 ﻿using System;
 
+
+/// <summary> Player class </summary>
 public class Player
 {
 
