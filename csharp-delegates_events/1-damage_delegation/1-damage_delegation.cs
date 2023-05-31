@@ -45,7 +45,7 @@ public class Player
     /// <summary> HealDamage Method </summary>
     public void HealDamage(float heal)
     {
-        if( heal < 0f){
+        if( heal < 0f)
             heal = 0f;
         Console.WriteLine("{0} heals {1} HP!", name, heal);
         hp += heal;
