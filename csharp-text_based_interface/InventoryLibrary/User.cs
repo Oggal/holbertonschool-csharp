@@ -18,7 +18,8 @@ namespace InventoryLibrary
         ///<summary> User constructor </summary>
         public User(string name)
         {
-            this.name = name;
+            if(name != null)
+                this.name = name;
         }
     }
 }

@@ -66,8 +66,70 @@ namespace InventoryManagement.Tests
         public void UserTest()
         {
             Assert.IsInstanceOf<string>(testUser.name);
-
             Assert.IsNotNull(testUser.name);
         }
+
+        [TestCase("testUser",ExpectedResult = "testUser")]
+        [TestCase("testUser2",ExpectedResult = "testUser2")]
+        [TestCase(null, ExpectedResult = "user")]
+        public string UserNameTest(string value)
+        {
+            User LocalUser;
+            try
+            {
+                LocalUser = new User(value);
+                Assert.IsNotNull(LocalUser.name);
+                return LocalUser.name;
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+            
+            return null;
+        }
+
+        [TestCase(1, ExpectedResult = 1)]
+        [TestCase(2, ExpectedResult = 2)]
+        [TestCase(0, ExpectedResult = 0)]
+        [TestCase(-1, ExpectedResult = 0)]
+        public int InventoryCreationTests(int value)
+        {
+            Inventory LocalInventory;
+            try
+            {
+                LocalInventory = new Inventory(testUser, testItem, value);
+                Assert.IsNotNull(LocalInventory.user_id);
+                Assert.IsNotNull(LocalInventory.item_id);
+                Assert.AreEqual(LocalInventory.user_id, testUser.id);
+                Assert.AreEqual(LocalInventory.item_id, testItem.id);
+                return LocalInventory.quantity;
+            }
+                catch
+            {
+                Assert.Fail();
+                return -1;
+            }
+        }
+
+        [TestCase(1, ExpectedResult = 1)]
+        [TestCase(2, ExpectedResult = 2)]
+        [TestCase(0, ExpectedResult = 0)]
+        [TestCase(-1, ExpectedResult = 0)]
+        public int InventorySetQuantityTests(int value)
+        {
+            try
+            {
+                Inventory LocalInventory = new Inventory(testUser, testItem);
+                LocalInventory.quantity = value;
+                return LocalInventory.quantity;
+            }
+            catch
+            {
+                Assert.Fail();
+                return -1;
+            }
+        }
+
     }
 }
