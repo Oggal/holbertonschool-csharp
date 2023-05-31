@@ -46,7 +46,6 @@ namespace InventoryManagement.Tests
         [TestCase( new object[] {"dogs", "cats", "dogs"}, ExpectedResult =  2)]
         [TestCase( new object[] {"dogs", "cats", "dogs", "cats"}, ExpectedResult =  2)]
         [TestCase( new object[] {}, ExpectedResult =  0)]
-        []
         public int TagCountTest(params string[] value)
         {
             Item LocalItem;

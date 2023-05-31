@@ -14,7 +14,14 @@ namespace InventoryLibrary
         /// <summary> date updated </summary>
         public DateTime date_updated { get;}
     
-    
+        /// <summary> BaseClass constructor </summary>
+        public BaseClass()
+        {
+            this.id = Guid.NewGuid().ToString();
+            DateTime curent = DateTime.Now;
+            this.date_created = curent;
+            this.date_updated = curent;
+        }
             
     }
 }
