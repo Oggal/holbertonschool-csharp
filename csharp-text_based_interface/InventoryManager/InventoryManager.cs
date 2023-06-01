@@ -7,7 +7,7 @@ namespace InventoryManager
     static class InventoryManager
     {
 
-        delegate void MyCallback(string a = null);
+        delegate void MyCallback(string[] a = null);
         static Dictionary<string, MyCallback> commands = new Dictionary<string, MyCallback>();
         
 
@@ -21,19 +21,24 @@ namespace InventoryManager
                 Console.WriteLine(GetMenuPrompt());
                 LastIn = GetInput();
                 string command = LastIn[0];
+                List<string> temp = new List<string>(LastIn);
+                temp.RemoveAt(0);
+                string[] args2 = temp.ToArray();
                 if (commands.ContainsKey(command))
                 {
                     MyCallback callback = (MyCallback)commands[command];
-                    callback.Invoke(LastIn[1]);
+                    callback.Invoke(args2);
                 }
             }
         }
 
+        /// <summary> ValidateInput Method </summary>
         public static bool ValidateInput(string[] args, int argc)
         {
             return args.Length >= argc;
         }
 
+        /// <summary> Init Method </summary>
         public static void Init()
         {
             JSONStorage.instance.Load();
@@ -42,8 +47,11 @@ namespace InventoryManager
             commands.Add("all", All);
             commands.Add("create",Create);
             commands.Add("show", Show);
+            commands.Add("update", Update);
+            commands.Add("delete", Delete);
         }
 
+        /// <summary> GetInput Method </summary>
         public static string[] GetInput()
         {
             Console.Write("Enter a command: ");
@@ -70,13 +78,13 @@ namespace InventoryManager
             return Prompt;
         }
 
-        private static void Exit(string a = null)
+        private static void Exit(string[] a = null)
         {
             Console.WriteLine("Exiting...");
             Environment.Exit(0);
         }
 
-        private static void All(string ClassName = null)
+        private static void All(string[] ClassName = null)
         {
             Console.WriteLine("All:");
             foreach (KeyValuePair<string, BaseClass> entry in JSONStorage.instance.All())
@@ -85,7 +93,7 @@ namespace InventoryManager
             }
         }
 
-        private static void Create(string ClassName = null)
+        private static void Create(string[] ClassName = null)
         {
             if (ClassName == null)
             {
@@ -103,10 +111,9 @@ namespace InventoryManager
 
         }
 
-        private static BaseClass CreateNew(string ClassName)
+        private static BaseClass CreateNew(string[] args)
         {
-            string[] args = ClassName.Split(" ");
-            ClassName = args[0];
+            string ClassName = args[0];
             switch (ClassName)
             {
                 case "item":
@@ -135,15 +142,15 @@ namespace InventoryManager
             }
         }
 
-        public static void Show(string ClassName = null)
+        /// <summary> Show Method </summary>
+        public static void Show(string[] args = null)
         {
-            if (ClassName == null)
+            if (args == null)
             {
                 Console.WriteLine("Error: ClassName required.");
                 return;
             }
-            string[] args = ClassName.Split(" ");
-            ClassName = args[0] + "." + args[1];
+            string ClassName = args[0] + "." + args[1];
             BaseClass obj;
             // show an object of type ClassName
             JSONStorage.instance.All().TryGetValue(ClassName, out obj);
@@ -155,6 +162,18 @@ namespace InventoryManager
             Console.WriteLine(obj);
         }
 
-        
+        /// <summary> Update Method </summary>
+        public static void Update(string[] args)
+        {
+            Console.WriteLine("Not implemented!");
+        }
+
+        /// <summary> Delete Method </summary>
+        public static void Delete(string[] args)
+        {
+            Console.WriteLine("Not implemented!");
+        }
+
+
     }
 }
