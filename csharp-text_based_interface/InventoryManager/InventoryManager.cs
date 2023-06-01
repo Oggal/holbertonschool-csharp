@@ -127,8 +127,18 @@ namespace InventoryManager
             switch (ClassName)
             {
                 case "item":
+                    if(args.Length < 2)
+                    {
+                        Console.WriteLine("Error: Item requires 1 argument[Name].");
+                        return null;
+                    }
                     return new Item(args[1]);
                 case "user":
+                    if(args.Length < 2)
+                    {
+                        Console.WriteLine("Error: User requires 1 argument[Name].");
+                        return null;
+                    }
                     return new User(args[1]);
                 case "inventory":
                     if(args.Length < 3)
