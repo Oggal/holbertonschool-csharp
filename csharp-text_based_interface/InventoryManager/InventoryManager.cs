@@ -41,6 +41,7 @@ namespace InventoryManager
             commands.Add("exit", Exit);
             commands.Add("all", All);
             commands.Add("create",Create);
+            commands.Add("show", Show);
         }
 
         public static string[] GetInput()
@@ -134,6 +135,22 @@ namespace InventoryManager
             }
         }
 
-        
+        public static void Show(string ClassName = null)
+        {
+            if (ClassName == null)
+            {
+                Console.WriteLine("Error: ClassName required.");
+                return;
+            }
+            BaseClass obj;
+            // show an object of type ClassName
+            JSONStorage.instance.All().TryGetValue(ClassName, out obj);
+            if (obj == null)
+            {
+                Console.WriteLine("Error: ClassName not found.");
+                return;
+            }
+            Console.WriteLine(obj);
+        }
     }
 }
