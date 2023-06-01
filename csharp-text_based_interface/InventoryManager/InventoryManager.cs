@@ -64,6 +64,7 @@ namespace InventoryManager
             return Input;
         }
 
+        /// <summary> GetMenuPrompt Method </summary>
         public static string GetMenuPrompt()
         {
             string Prompt = @"
@@ -182,6 +183,7 @@ namespace InventoryManager
             JSONStorage.instance.DeleteItem(args[0], args[1]);
         }
 
+        /// <summary> ClassNames Method </summary>
         public static void ClassNames(string[] args = null)
         {
             Console.WriteLine("Class Names:");
