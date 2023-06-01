@@ -47,6 +47,28 @@ namespace InventoryLibrary
             }
         }
 
+        ///<summary> Delete Method </summary>
+        public void DeleteItem(string ClassName, string id)
+        {
+            string key = String.Format("{0}.{1}", ClassName, id);
+            if (objects.ContainsKey(key))
+                objects.Remove(key);
+            else
+                Console.WriteLine("Error: Object not found.");
+        }
+
+        /// <summary> GetItem Method </summary>
+        public BaseClass GetItem(string ClassName, string id)
+        {
+            string key = String.Format("{0}.{1}", ClassName, id);
+            foreach( KeyValuePair<string, BaseClass> kvp in objects)
+            {
+                if (kvp.Key.ToLower() == key)
+                    return kvp.Value;
+            }
+            return null;
+        }
+
         ///<summary> Load Method </summary>
         public void Load()
         {

@@ -58,7 +58,7 @@ namespace InventoryManager
         public static string[] GetInput()
         {
             Console.Write("Enter a command: ");
-            string[] Input = Console.ReadLine().ToLower().Split(" ", 2);
+            string[] Input = Console.ReadLine().ToLower().Split(" ");
             if(Input.Length == 1)
                 Input = new string[] {Input[0], null};
             return Input;
@@ -92,7 +92,13 @@ namespace InventoryManager
             Console.WriteLine("All:");
             foreach (KeyValuePair<string, BaseClass> entry in JSONStorage.instance.All())
             {
-                Console.WriteLine(entry.Key + ": " + entry.Value);
+                if (ClassName == null || ClassName[0] == null)
+                    Console.WriteLine(entry.Key + ": " + entry.Value);
+                else
+                    {
+                        if (entry.Key.Split(".")[0].ToLower() == ClassName[0])
+                            Console.WriteLine(entry.Key + ": " + entry.Value);
+                    }
             }
         }
 
@@ -148,15 +154,17 @@ namespace InventoryManager
         /// <summary> Show Method </summary>
         public static void Show(string[] args = null)
         {
-            if (args == null)
+            if (args == null || args[0] == null)
             {
                 Console.WriteLine("Error: ClassName required.");
                 return;
             }
-            string ClassName = args[0] + "." + args[1];
-            BaseClass obj;
-            // show an object of type ClassName
-            JSONStorage.instance.All().TryGetValue(ClassName, out obj);
+            if (args.Length < 2 || args[1] == null)
+            {
+                Console.WriteLine("Error: id required.");
+                return;
+            }
+            BaseClass obj = JSONStorage.instance.GetItem(args[0], args[1]);
             if (obj == null)
             {
                 Console.WriteLine("Error: ClassName not found.");
@@ -174,7 +182,7 @@ namespace InventoryManager
         /// <summary> Delete Method </summary>
         public static void Delete(string[] args)
         {
-            Console.WriteLine("Not implemented!");
+            JSONStorage.instance.DeleteItem(args[0], args[1]);
         }
 
         public static void ClassNames(string[] args = null)
