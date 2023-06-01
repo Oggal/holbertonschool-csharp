@@ -100,5 +100,33 @@ namespace InventoryLibrary
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
         }
+
+        private string BuildJSONDict()
+        {
+            List<User> users = new List<User>();
+            List<Item> items = new List<Item>();
+            List<Inventory> inventories = new List<Inventory>();
+            foreach (KeyValuePair<string, BaseClass> kvp in objects)
+            {
+                string type = kvp.Key.Split('.')[0].ToLower();
+                if (type == "user")
+                    users.Add(kvp.Value as User);
+                else if (type == "item")
+                    items.Add(kvp.Value as Item);
+                else if (type == "inventory")
+                    inventories.Add(kvp.Value as Inventory);
+                else
+                    Console.WriteLine("Error: Unknown type.");
+            }
+            string results = JsonSerializer.Serialize(users) + '\n';
+            results += JsonSerializer.Serialize(items) + '\n';
+            results += JsonSerializer.Serialize(inventories);
+            return results;
+        }
+
+        private void BuildFromJson(string jsonData, Type type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
