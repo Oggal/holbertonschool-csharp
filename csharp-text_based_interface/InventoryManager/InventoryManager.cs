@@ -28,6 +28,8 @@ namespace InventoryManager
                 {
                     MyCallback callback = (MyCallback)commands[command];
                     callback.Invoke(args2);
+                }else{
+                    Console.WriteLine("Error: Command not found.");
                 }
             }
         }
