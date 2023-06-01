@@ -105,7 +105,7 @@ namespace InventoryManager
 
         private static void Create(string[] ClassName = null)
         {
-            if (ClassName == null)
+            if (ClassName == null || ClassName[0] == null)
             {
                 Console.WriteLine("Error: ClassName required.");
                 return;
