@@ -137,6 +137,8 @@ namespace InventoryManager
 
         public static void Show(string ClassName = null)
         {
+            string[] args = ClassName.Split(" ");
+            ClassName = args[0];
             if (ClassName == null)
             {
                 Console.WriteLine("Error: ClassName required.");
