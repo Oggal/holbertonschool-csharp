@@ -49,6 +49,7 @@ namespace InventoryManager
             commands.Add("show", Show);
             commands.Add("update", Update);
             commands.Add("delete", Delete);
+            commands.Add("classnames", ClassNames);
         }
 
         /// <summary> GetInput Method </summary>
@@ -174,6 +175,14 @@ namespace InventoryManager
             Console.WriteLine("Not implemented!");
         }
 
+        public static void ClassNames(string[] args = null)
+        {
+            Console.WriteLine("Class Names:");
+            foreach (string ClassName in JSONStorage.classes)
+            {
+                Console.WriteLine(ClassName);
+            }
+        }
 
     }
 }

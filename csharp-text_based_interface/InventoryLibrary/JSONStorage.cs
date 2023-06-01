@@ -13,6 +13,8 @@ namespace InventoryLibrary
         /// <summary> JSONStorage instance </summary>
         public static JSONStorage instance = new JSONStorage();
         Dictionary<string, BaseClass> objects = new Dictionary<string, BaseClass>();
+        /// <summary> All classes </summary>
+        public static string[] classes = new string[] { "User", "Item", "Inventory" };
 
         /// <summary> All Method </summary>
         public Dictionary<string, BaseClass> All()
