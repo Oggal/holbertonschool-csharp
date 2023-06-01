@@ -137,13 +137,13 @@ namespace InventoryManager
 
         public static void Show(string ClassName = null)
         {
-            string[] args = ClassName.Split(" ");
-            ClassName = args[0];
             if (ClassName == null)
             {
                 Console.WriteLine("Error: ClassName required.");
                 return;
             }
+            string[] args = ClassName.Split(" ");
+            ClassName = args[0] + "." + args[1];
             BaseClass obj;
             // show an object of type ClassName
             JSONStorage.instance.All().TryGetValue(ClassName, out obj);
@@ -154,5 +154,7 @@ namespace InventoryManager
             }
             Console.WriteLine(obj);
         }
+
+        
     }
 }
