@@ -126,20 +126,17 @@ namespace InventoryManager
             switch (ClassName)
             {
                 case "item":
-                    return new Item(null);
+                    return new Item(args[1]);
                 case "user":
-                    return new User(null);
+                    return new User(args[1]);
                 case "inventory":
                     if(args.Length < 3)
                     {
                         Console.WriteLine("Error: Inventory requires 2 arguments[UserID, ItemID].");
                         return null;
                     }
-                    BaseClass  obj;
-                    JSONStorage.instance.All().TryGetValue("Item." + args[2], out obj);
-                    Item inv_item = obj as Item;
-                    JSONStorage.instance.All().TryGetValue("User." + args[1], out obj);
-                    User inv_user = obj as User;
+                    Item inv_item = JSONStorage.instance.GetItem("item", args[2]) as Item;
+                    User inv_user = JSONStorage.instance.GetItem("user", args[1]) as User;
                     if (inv_item == null || inv_user == null)
                     {
                         return new Inventory(args[1], args[2]);
