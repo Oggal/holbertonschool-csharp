@@ -39,7 +39,7 @@ namespace InventoryManager
         }
 
         /// <summary> Init Method </summary>
-        public static void Init()
+        static void Init()
         {
             JSONStorage.instance.Load();
 
